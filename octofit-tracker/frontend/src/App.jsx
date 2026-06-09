@@ -5,7 +5,7 @@ function App() {
   const [health, setHealth] = useState('Checking API status...')
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/health')
+    fetch('/api/health')
       .then((response) => response.json())
       .then((data) => setHealth(data.status === 'ok' ? 'API healthy' : 'API unavailable'))
       .catch(() => setHealth('API unavailable'))
